@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加城市</title>
+</head>
+<body>
+<h1 th:if="${stat} > 0">添加成功</h1>
+<form action="/city/add" method="post">
+    城市名称：<input name="name"><br>
+    城市地址：<input name="address"><br>
+    <input type="submit" value="添加">
+</form>
+</body>
+</html>

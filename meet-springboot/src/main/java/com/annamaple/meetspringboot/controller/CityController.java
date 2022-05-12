@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author xionglei
@@ -25,10 +25,17 @@ public class CityController {
         return "cities";
     }
 
-    @RequestMapping("/add/{name}/{address}")
-    public String add(@PathVariable("name") String name, @PathVariable("address") String address, Model model) {
+    @RequestMapping("/add")
+    public String add(@RequestParam("name") String name, @RequestParam("address") String address, Model model) {
         int id = cityService.add(name, address);
         model.addAttribute("id", id);
-        return "success";
+        System.out.println("===== add ==== ");
+        model.addAttribute("stat", id);
+        return "city_add";
+    }
+
+    @GetMapping("/add-page")
+    public String addPage() {
+        return "city_add";
     }
 }

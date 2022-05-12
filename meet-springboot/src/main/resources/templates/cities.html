@@ -8,9 +8,9 @@
 <h1>city</h1>
 <h2 th:text="'city数量：' + ${#lists.size(cities)}"></h2>
 <tr th:each="city, stat: ${cities}">
-    <td th:text="'city' + ${city.id} + ' '"></td>
-    <td th:text="'name: ' + ${city.name} + ' '"></td>
-    <td th:text="'address: ' + ${city.address} + ' '"></td><br>
+    <td th:text="'序号: ' + ${city.id} + ' '"></td>
+    <td th:text="'名称: ' + ${city.name} + ' '"></td>
+    <td th:text="'地址: ' + ${city.address} + ' '"></td><br>
 </tr>
 </body>
 </html>
