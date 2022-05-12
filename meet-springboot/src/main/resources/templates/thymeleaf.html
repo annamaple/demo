@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<!--占位符-->
+<h1 th:text="${name}"></h1>
+<h2 th:text="${#maps.size(map)}"></h2>
+<h2 th:object="${map}">
+    <p>name: <span th:text="*{name}"></span></p>
+    <p>age: <span th:text="*{age}"></span></p>
+</h2>
+
+<tr th:each="user,stat: ${users}">
+    <td th:text="${stat.index}"></td>
+    <td th:text="${user.name}"></td>
+    <td th:text="${user.age}"></td>
+</tr>
+
+<ul th:each="e, stat: ${list}">
+    <li th:text="${e}"></li>
+</ul>
+</body>
+</html>
