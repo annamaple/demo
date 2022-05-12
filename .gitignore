@@ -1,0 +1,49 @@
+# 项目排除路径
+/dp-tank/.gradle/
+/meeting-hutool/.gradle/
+/meeting-hutool/build/
+/meeting-hutool/out/
+/meeting-hutool/out/production/classes/
+/meeting-hutool/out/test/classes/
+/meeting-nutz/.gradle/
+/meeting-nutz/out/
+/meeting-nutz/out/production/classes/
+/meeting-nutz/out/test/classes/
+/nutz-web/.gradle/
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
