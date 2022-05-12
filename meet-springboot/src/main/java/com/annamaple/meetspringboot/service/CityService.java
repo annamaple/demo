@@ -15,4 +15,6 @@ public interface CityService {
 
     int add(String name, String address);
     
+    List<City> query();
+    
 }
