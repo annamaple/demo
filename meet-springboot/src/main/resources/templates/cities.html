@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>city</h1>
+<h2 th:text="'city数量：' + ${#lists.size(cities)}"></h2>
+<tr th:each="city, stat: ${cities}">
+    <td th:text="'city' + ${city.id} + ' '"></td>
+    <td th:text="'name: ' + ${city.name} + ' '"></td>
+    <td th:text="'address: ' + ${city.address} + ' '"></td><br>
+</tr>
+</body>
+</html>

@@ -1,2 +1,9 @@
 server:
   port: 8081
+
+spring:
+  datasource:
+    url: jdbc:mysql://10.2.21.24/test?userSSL=false&characterEncoding=utf8
+    name: root
+    password: 
+    driver-class-name: 
