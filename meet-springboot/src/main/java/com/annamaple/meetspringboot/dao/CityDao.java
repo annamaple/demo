@@ -13,6 +13,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
+ * 在内存中实现的city的CRUD
+ *
  * @author xionglei
  * @create 2022-05-12 15:38
  */
@@ -21,6 +23,7 @@ public class CityDao {
 
     private static final Map<Integer, City> dataMap = Collections.synchronizedMap(new HashMap<>(16));
     private static final AtomicInteger integer = new AtomicInteger(0);
+
     static {
         dataMap.put(integer.get(), new City(integer.getAndIncrement(), "jinZhou", "xxx/xxx/xxx/jinZHou"));
         dataMap.put(integer.get(), new City(integer.getAndIncrement(), "xinZhou", "xxx/xxx/xxx/xinZhou"));
@@ -31,7 +34,7 @@ public class CityDao {
     public List<City> findAll() {
         return new LinkedList<>(dataMap.values());
     }
-    
+
     public int save(String name, String address) {
         int id = integer.getAndIncrement();
         City city = new City(id, name, address);
