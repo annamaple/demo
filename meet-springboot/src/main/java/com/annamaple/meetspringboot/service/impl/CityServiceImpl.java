@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
@@ -17,8 +18,8 @@ import java.util.List;
 @Service
 public class CityServiceImpl implements CityService {
 
-    @Autowired
-    private CityDao cityDao;
+    private static AtomicInteger integer = new AtomicInteger(0);
+
     @Autowired
     private CityRepository cityRepository;
     
@@ -32,6 +33,7 @@ public class CityServiceImpl implements CityService {
     	City c = new City();
     	c.setName(name);
     	c.setAddress(address);
+        c.setId(integer.getAndIncrement());
         return cityRepository.save(c).getId();
     }
 

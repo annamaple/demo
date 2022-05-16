@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.annotation.Resource;
+
 /**
  * @author xionglei
  * @create 2022-05-12 15:56
@@ -35,7 +37,8 @@ public class CityController {
     }
 
     @GetMapping("/add-page")
-    public String addPage() {
+    public String addPage(Model model) {
+        model.addAttribute("stat", 0);
         return "city_add";
     }
     

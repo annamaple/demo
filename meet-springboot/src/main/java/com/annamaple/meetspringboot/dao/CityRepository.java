@@ -1,11 +1,11 @@
 package com.annamaple.meetspringboot.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Component;
 
 import com.annamaple.meetspringboot.bean.City;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public interface CityRepository extends JpaRepository<City, Integer> {
 	
 }
