@@ -21,24 +21,24 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Component
 public class CityDao {
 
-    private static final Map<Integer, City> dataMap = Collections.synchronizedMap(new HashMap<>(16));
+    private static final Map<Integer, City> DATA_MAP = Collections.synchronizedMap(new HashMap<>(16));
     private static final AtomicInteger integer = new AtomicInteger(0);
 
     static {
-        dataMap.put(integer.get(), new City(integer.getAndIncrement(), "jinZhou", "xxx/xxx/xxx/jinZHou"));
-        dataMap.put(integer.get(), new City(integer.getAndIncrement(), "xinZhou", "xxx/xxx/xxx/xinZhou"));
-        dataMap.put(integer.get(), new City(integer.getAndIncrement(), "zinZhou", "xxx/xxx/xxx/zinZhou"));
-        dataMap.put(integer.get(), new City(integer.getAndIncrement(), "ainZhou", "xxx/xxx/xxx/ainZhou"));
+        DATA_MAP.put(integer.get(), new City(integer.getAndIncrement(), "jinZhou", "xxx/xxx/xxx/jinZHou"));
+        DATA_MAP.put(integer.get(), new City(integer.getAndIncrement(), "xinZhou", "xxx/xxx/xxx/xinZhou"));
+        DATA_MAP.put(integer.get(), new City(integer.getAndIncrement(), "zinZhou", "xxx/xxx/xxx/zinZhou"));
+        DATA_MAP.put(integer.get(), new City(integer.getAndIncrement(), "ainZhou", "xxx/xxx/xxx/ainZhou"));
     }
 
     public List<City> findAll() {
-        return new LinkedList<>(dataMap.values());
+        return new LinkedList<>(DATA_MAP.values());
     }
 
     public int save(String name, String address) {
         int id = integer.getAndIncrement();
         City city = new City(id, name, address);
-        dataMap.put(id, city);
+        DATA_MAP.put(id, city);
         return id;
     }
 }
