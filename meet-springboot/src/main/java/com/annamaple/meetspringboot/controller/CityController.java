@@ -45,7 +45,7 @@ public class CityController {
         return "city_add";
     }
     
-    @GetMapping("/")
+    @GetMapping("")
     public String page(Model model) {
         return addPage(model);
     }
