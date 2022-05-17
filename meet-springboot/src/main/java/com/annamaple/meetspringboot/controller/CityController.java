@@ -21,7 +21,7 @@ public class CityController {
 
     private final CityService cityService;
 
-    public CityController(@Qualifier("catchCityServiceImpl") CityService cityService) {
+    public CityController(@Qualifier("persistenceCityServiceImpl") CityService cityService) {
         this.cityService = cityService;
     }
 
@@ -43,6 +43,11 @@ public class CityController {
     public String addPage(Model model) {
         model.addAttribute("stat", 0);
         return "city_add";
+    }
+    
+    @GetMapping("/")
+    public String page(Model model) {
+        return addPage(model);
     }
 
 }
