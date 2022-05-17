@@ -3,7 +3,7 @@ package com.annamaple.meetspringboot.service.impl;
 import com.annamaple.meetspringboot.bean.City;
 import com.annamaple.meetspringboot.dao.CityRepository;
 import com.annamaple.meetspringboot.service.CityService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -12,10 +12,14 @@ import java.util.List;
  * @author xionglei
  * @create 2022-05-16 14:52
  */
+@Service
 public class PersistenceCityServiceImpl implements CityService {
 
-    @Autowired
-    private CityRepository cityRepository;
+    private final CityRepository cityRepository;
+
+    public PersistenceCityServiceImpl(CityRepository cityRepository) {
+        this.cityRepository = cityRepository;
+    }
 
     @Override
     public List<City> findAll() {
