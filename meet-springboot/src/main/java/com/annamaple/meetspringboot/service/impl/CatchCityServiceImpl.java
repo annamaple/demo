@@ -10,6 +10,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
+ * 保存到内存中
+ *
  * @author xionglei
  * @create 2022-05-12 15:38
  */
