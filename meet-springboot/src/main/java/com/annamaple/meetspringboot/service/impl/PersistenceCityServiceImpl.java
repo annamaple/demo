@@ -18,8 +18,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Service
 public class PersistenceCityServiceImpl implements CityService {
 
-    private static final AtomicInteger ATOMIC_INTEGER = new AtomicInteger(0);
-
     private final CityRepository cityRepository;
 
     public PersistenceCityServiceImpl(CityRepository cityRepository) {
@@ -36,7 +34,6 @@ public class PersistenceCityServiceImpl implements CityService {
         City city = new City();
         city.setName(name);
         city.setAddress(address);
-        city.setId(ATOMIC_INTEGER.getAndIncrement());
         return cityRepository.save(city).getId();
     }
 

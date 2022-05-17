@@ -22,7 +22,7 @@ import javax.persistence.*;
 public class City {
 
     @Id
-    // id生成策略为id生成器
+    // id生成策略为：id生成器，此时代码中不用赋值，数据库中使用自增赋值
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
