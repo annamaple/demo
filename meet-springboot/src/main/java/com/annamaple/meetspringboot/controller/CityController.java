@@ -30,7 +30,6 @@ public class CityController {
     public String add(@RequestParam("name") String name, @RequestParam("address") String address, Model model) {
         int id = cityService.add(name, address);
         model.addAttribute("id", id);
-        System.out.println("===== add ==== ");
         model.addAttribute("stat", id);
         return "city_add";
     }
