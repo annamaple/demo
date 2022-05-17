@@ -22,6 +22,7 @@ import javax.persistence.*;
 public class City {
 
     @Id
+    // id生成策略为id生成器
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
