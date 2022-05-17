@@ -6,7 +6,6 @@ import com.annamaple.meetspringboot.service.CityService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
