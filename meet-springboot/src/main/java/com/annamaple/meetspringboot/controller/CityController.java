@@ -1,7 +1,7 @@
 package com.annamaple.meetspringboot.controller;
 
 import com.annamaple.meetspringboot.service.CityService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 /**
+ * City相关Controller
+ *
  * @author xionglei
  * @create 2022-05-12 15:56
  */
@@ -17,8 +19,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/city")
 public class CityController {
 
-    @Autowired
-    private CityService cityService;
+    private final CityService cityService;
+
+    public CityController(@Qualifier("catchCityServiceImpl") CityService cityService) {
+        this.cityService = cityService;
+    }
 
     @GetMapping("/cities")
     public String findAll(Model model) {
@@ -39,5 +44,5 @@ public class CityController {
         model.addAttribute("stat", 0);
         return "city_add";
     }
-    
+
 }
