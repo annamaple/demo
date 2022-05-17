@@ -6,6 +6,7 @@ import com.annamaple.meetspringboot.service.CityService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
@@ -16,6 +17,8 @@ import java.util.List;
  */
 @Service
 public class PersistenceCityServiceImpl implements CityService {
+
+    private static final AtomicInteger ATOMIC_INTEGER = new AtomicInteger(0);
 
     private final CityRepository cityRepository;
 
@@ -33,6 +36,7 @@ public class PersistenceCityServiceImpl implements CityService {
         City city = new City();
         city.setName(name);
         city.setAddress(address);
+        city.setId(ATOMIC_INTEGER.getAndIncrement());
         return cityRepository.save(city).getId();
     }
 
