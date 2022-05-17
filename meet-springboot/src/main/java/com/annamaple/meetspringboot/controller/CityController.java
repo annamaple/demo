@@ -33,6 +33,10 @@ public class CityController {
 
     @RequestMapping("/add")
     public String add(@RequestParam("name") String name, @RequestParam("address") String address, Model model) {
+        // 当没有传递参数时，直接跳转到添加页面
+        if ((name == null || "".equals(name)) && (address == null || "".equals(address))) {
+            return addPage(model);
+        }
         int id = cityService.add(name, address);
         model.addAttribute("id", id);
         model.addAttribute("stat", id);
@@ -47,7 +51,7 @@ public class CityController {
     
     @GetMapping("")
     public String page(Model model) {
-        return addPage(model);
+        return findAll(model);
     }
 
 }
