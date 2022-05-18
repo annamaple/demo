@@ -29,4 +29,14 @@ public class CityDao {
         DATA_MAP.put(city.getId(), city);
         return city;
     }
+
+    public boolean delete(Integer id) {
+        return DATA_MAP.remove(id) != null;
+    }
+
+    public boolean update(City city) {
+        // map.put()方法会返回原来的city, 如果原来的city为null,表示新增
+        return DATA_MAP.put(city.getId(), city) != null;
+    }
+    
 }

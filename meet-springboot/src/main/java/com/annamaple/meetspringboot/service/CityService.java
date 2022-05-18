@@ -15,4 +15,8 @@ public interface CityService {
 
     int add(String name, String address);
     
+    boolean remove(Integer id);
+    
+    boolean update(City city);
+    
 }

@@ -36,4 +36,16 @@ public class PersistenceCityServiceImpl implements CityService {
         return cityRepository.save(city).getId();
     }
 
+    @Override
+    public boolean remove(Integer id) {
+        cityRepository.deleteById(id);
+        return true;
+    }
+
+    @Override
+    public boolean update(City city) {
+        
+        return true;
+    }
+
 }

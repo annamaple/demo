@@ -40,4 +40,14 @@ public class CatchCityServiceImpl implements CityService {
         return cityDao.save(c).getId();
     }
 
+    @Override
+    public boolean remove(Integer id) {
+        return cityDao.delete(id);
+    }
+
+    @Override
+    public boolean update(City city) {
+        return cityDao.update(city);
+    }
+
 }
