@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AnnamapleController {
 
 
-	@GetMapping("/hello")
+	@RequestMapping("/hello")
 	public ResultDTO<String> hello() {
 		return ResultDTO.success("Hello, World");
 	}
